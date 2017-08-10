@@ -5,15 +5,12 @@ ref: about
 lang: es
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Soy un apasionado de la tecnología al que le encanta aprender nuevas cosas y estar al día de las últimas tendencias tecnológicas. Me considero afortunado de poder trabajar en algo en lo que creo: a través de la innovación y el continuo desarrollo de nuestras capacidades podemos ayudar a que nuestras condiciones de vida sean mejores.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Ingeniero Superior de Telecomuncaciones, enfoqué mi carrera hacia el desarrollo de aplicaciones para móviles desde muy pronto, cuando elaboraba mi proyecto fin de carrera para convertirme en Ingeniero Técnico de Telecomunicaciones, allá por el año 2011. Desde ese momento he mantenido una relación constante con el mundo de las aplicaciones móviles, tanto para terminales Android como iOS.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+He trabajado para empresas tanto en España como en Inglaterra, donde residí durante poco más de dos años, en proyectos de todo tipo: aplicaciones para compra de tickets de conciertos, televisión online, transporte de pasajeros, control remoto de aparatos de HI-FI, herramientas de venta y tiendas de moda, entre otros muchos proyectos.
 
+Hace relativamente poco volví a mi lugar de origen: Tenerife, donde me he establecido como desarrollador freelance, además de colaborar como voluntario en proyectos sociales a través de [SocialCoder](www.socialcoder.org). 
 
-[jekyll-organization]: https://github.com/jekyll
+Si te gusta lo que lees, necesitas ayuda con algún tema en concreto o te gustaría disponer de mis servicios profesionales para el desarrollo de algún proyecto, no dudes en contactar conmigo a través de un correo o Linkedin. Estaré encantado de atenderte.
