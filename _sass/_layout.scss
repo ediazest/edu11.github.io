@@ -24,7 +24,6 @@
 .site-nav {
     float: right;
     line-height: 56px;
-    margin-right: 5%;
 
     .menu-icon {
         display: none;
@@ -55,7 +54,7 @@
             width: 36px;
             height: 26px;
             line-height: 0;
-            padding-top: 10px;
+            padding-top: 6px;
             text-align: center;
 
             > svg {
@@ -165,15 +164,75 @@
     }
 }
 
+@include desktop {
+    .page-title{
+        min-height: 350px;
+        background-position-y: -250px;
+        div {
+            h1{
+                font-size: 60px;
+                font-weight: 800;
+            }
+            .page-subheading{
+                font-size: 27px;
+            }
+        }
+    }
+
+    .language-links {
+        margin-right: 5%;
+        text-align: right;
+        line-height: 2em;
+    }
+
+    .header-line{
+        min-height: 6em;
+    }
+    .site-nav {
+        margin-right: 5%;
+    }
+    .trigger {
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #404040;
+    }
+}
+
 @include media-query($on-palm) {
     .footer-col {
         float: none;
         width: -webkit-calc(100% - (#{$spacing-unit} / 2));
         width:         calc(100% - (#{$spacing-unit} / 2));
     }
+    .page-title{
+        min-height: 250px;
+        background-position-y: 0;
+         div {
+            h1{
+                font-size: 40px;
+                font-weight: 600;
+            }
+            .page-subheading{
+                font-size: 17px;
+            }
+        }
+    }
+    .language-links {
+        margin-left: 5%;
+        text-align: left;
+        line-height: 2em;
+        position: absolute;
+        top: 9px;
+    }
+
+    .header-line{
+        min-height: 3em;
+    }
 }
 
-
+.language-links {
+    clear: both;
+}
 
 /**
  * Page content
@@ -188,23 +247,14 @@
 
 .page-title{
     text-align: center;
-    min-height: 350px;
-    background-image: url(http://www.hellocanaryislands.com/sites/default/files/resource/parque_rural_de_anaga-tenerife_0.jpg);
-    background-position-y: -250px; 
+    background-image: url(http://www.hellocanaryislands.com/sites/default/files/resource/parque_rural_de_anaga-tenerife_0.jpg);    
     background-repeat: no-repeat;
     background-size: 100%;
     color: white;
 
     div {
-        padding-top: 5%;
         text-shadow: 1px 1px 3px #000;
-        h1{
-            font-size: 60px;
-            font-weight: 800;
-        }
-        .page-subheading{
-            font-size: 27px;
-        }
+        padding-top: 7%;
     }
 }
 

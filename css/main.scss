@@ -26,7 +26,7 @@ $grey-color-dark:  darken($grey-color, 25%);
 $content-width:    800px;
 
 $on-palm:          600px;
-$on-laptop:        800px;
+$on-laptop:        800px;;
 
 
 
@@ -43,6 +43,11 @@ $on-laptop:        800px;
     }
 }
 
+@mixin desktop {
+  @media (min-width: #{$on-palm}) {
+    @content;
+  }
+}
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)

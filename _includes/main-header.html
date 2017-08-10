@@ -1,11 +1,8 @@
 <header class="site-header">
 
-  <div style="min-height: 6em;">
+  <div class="header-line">
 
-    <div style="text-align: right;
-        line-height: 2em;
-        clear: both;
-        margin-right: 5%">
+    <div class="language-links">
       {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
       {% for post in posts %} <a href="{{ post.url | prepend: site.baseurl }}" class="{{ post.lang }}">{{ post.lang }}</a> {% endfor %}
 
