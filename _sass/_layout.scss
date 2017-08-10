@@ -2,10 +2,10 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
-
+    background: #F5F5F5;
+    border-top: 1px #EAEAEA solid;
     // Positioning context for the mobile navigation icon
     position: relative;
 }
@@ -18,10 +18,7 @@
     margin-bottom: 0;
     float: left;
 
-    &,
-    &:visited {
-        color: $grey-color-dark;
-    }
+    
 }
 
 .site-nav {
@@ -101,6 +98,19 @@
 .site-footer {
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
+    background: #F5F5F5;
+    border-top: 1px #EAEAEA solid;
+    margin-top: 50px;
+    font-size: 14px;
+    .copyright{
+        text-align: center;
+        line-height: 1.5;
+        margin: 30px 0;
+    }
+    .footer-links{
+        font-size: 18px;
+        margin-left: 30px;
+    }
 }
 
 .footer-heading {
@@ -179,7 +189,7 @@
 .page-title{
     text-align: center;
     min-height: 350px;
-    background-image: url(https://gotenerife.net/wp-content/uploads/2014/09/las-teresitas.jpg);
+    background-image: url(http://www.hellocanaryislands.com/sites/default/files/resource/parque_rural_de_anaga-tenerife_0.jpg);
     background-position-y: -250px; 
     background-repeat: no-repeat;
     background-size: 100%;
@@ -187,6 +197,35 @@
 
     div {
         padding-top: 5%;
+        text-shadow: 1px 1px 3px #000;
+        h1{
+            font-size: 60px;
+            font-weight: 800;
+        }
+        .page-subheading{
+            font-size: 27px;
+        }
+    }
+}
+
+.page-title-index {
+    @extend .page-title;
+    background-image: url(https://gotenerife.net/wp-content/uploads/2014/09/las-teresitas.jpg);
+
+    hr{
+        box-shadow: 1px 1px 3px #000;
+        -webkit-box-shadow: 1px 1px 3px #000;
+        -moz-box-shadow: 1px 1px 3px #000;
+            max-width: 100px;
+        margin: 15px auto;
+        border-width: 4px;
+        border-color: inherit;
+        border-radius: 3px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border: 0;
+        border-top: 4px solid #eee;
+        color: #FFF;
         text-shadow: 1px 1px 3px #000;
     }
 }
@@ -197,17 +236,21 @@
 
     > li {
         margin-bottom: $spacing-unit;
+        h2 {
+            margin-bottom: 0;
+        }
     }
 }
 
 .post-meta {
-    font-size: $small-font-size;
+    font-size: 20px;
     color: $grey-color;
 }
 
 .post-link {
     display: block;
-    font-size: 24px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 
