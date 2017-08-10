@@ -16,6 +16,12 @@ lang: en
 
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
+        <div class="post-prev">
+          {{ post.content }}
+        </div>
+
+        <span> <a href="{{ post.url | prepend: site.baseurl }}">[READ MORE] </a></span>
+
       </li>
     {% endfor %}
   </ul>
