@@ -19,10 +19,8 @@ title:
 name: Eduardo Díaz Estrada
 email: info@applanticstudio.com
 description:  # this means to ignore newlines until "baseurl:"
-  en:  "Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description."
-  es: Blog de desarrollo de aplicaciones móviles
+  en:  "Ideas and solutions for regular App development problems"
+  es: "Soluciones e ideas para problemas normales en el desarrollo de aplicaciones móviles"
 index:
   en:
   es: es.html
@@ -34,6 +32,9 @@ url: "edu11.github.io" # the base hostname & protocol for your site, e.g. http:/
 twitter_username: 
 github_username:  edu11
 linkedin_username: eduardodiazestrada
+
+# Google Analytics track id
+ga_trackId: UA-104462803-1
 
 # Build settings
 markdown: kramdown
