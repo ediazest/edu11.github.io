@@ -164,6 +164,6 @@ información específica para la configuración actual, pasando a utilizar la de
 
 #### Conclusión
 
-Siempre es una buena idea tratar de reducir errores al comienzo de los proyectos y tener claro cómo desplegar en lso diferentes entornos es clave. Imagina que en lugar de tres entornos como en el ejemplo, tenemos cuatro o más, todos apuntando a diferentes servidores... Lo explicado en este post te permitirá crear múltiples esquemas y configuraciones para adaptarte a todos ellos. Además, si a esto le unes la integración con [Fastlane](https://docs.fastlane.tools) ahorrarás múltiples horas de sufrimiento! 
+Siempre es una buena idea tratar de reducir errores al comienzo de los proyectos y tener claro cómo desplegar en lso diferentes entornos es clave. Imagina que en lugar de tres entornos como en el ejemplo, tenemos cuatro o más, todos apuntando a diferentes servidores... Lo explicado en este post te permitirá crear múltiples esquemas y configuraciones para adaptarte a todos ellos. Además, si a esto le unes la integración con **[Fastlane](https://docs.fastlane.tools)** ahorrarás múltiples horas de sufrimiento! 
 
 Espero que este post ayude en tu camino a desarrollar fantásticas aplicaciones iOS. Próximamente publicaré una versión equivalente para Android Studio.
