@@ -15,7 +15,7 @@ Una herramienta que me ha ayudado a gestionar mejor el repositorio *(sí, uso un
 
 ![Ventana de SourceTree](../../../assets/images/managing-git/sourcetree-screen.png "Vista principal de SourceTree")
 
-Desde hace un tiempo, en todos los proyectos en los que he trabajado hemos seguido Git Flow para la gestión del repositorio, originalmente idea por **[Vincent Driessen](http://nvie.com/posts/a-successful-git-branching-model/)**, que es la manera que yo recomendaría para tener un repositorio limpio y en el que esté claro lo que se ha hecho.
+Desde hace un tiempo, en todos los proyectos en los que he trabajado hemos seguido GitFlow para la gestión del repositorio, originalmente idea por **[Vincent Driessen](http://nvie.com/posts/a-successful-git-branching-model/)**, que es la manera que yo recomendaría para tener un repositorio limpio y en el que esté claro lo que se ha hecho.
 
 Con SourceTree, iniciar GitFlow en un proyecto son solo 3 clicks y automáticamente crea la rama de desarrollo y genera internamente las *"carpetas"* que almacenarán el resto de ramas temporales que necesitarás durante el proyecto (hotfix, release y feature). Si lo quisieras, puedes cambiar el nombre que hace referencia a dichas ramas. Yo suelo dejarlo por defecto porque así es más probable que el próximo desarrollador que trabaje en el proyecto sepa qué la utilidad de cada rama.
 
@@ -36,14 +36,14 @@ La estrategia a seguir según GitFlow es la siguiente:
 ![GitFlow workflow](../../../assets/images/managing-git/gitflow-diagram.png "Flujo de trabajo con GitFlow")  
 
 
-Existen diferentes modelos para gestionar un repositorio git y, aunque Git-Flow tiene sus pequeños inconvenientes, hoy en día es uno de los más extendidos en el mundo del desarrollo. Si actualmente no sigues una estrategia clara de organización, te recomiendo probarla!
+Existen diferentes modelos para gestionar un repositorio git y, aunque GitFlow tiene sus pequeños inconvenientes, hoy en día es uno de los más extendidos en el mundo del desarrollo. Si actualmente no sigues una estrategia clara de organización, te recomiendo probarla!
 
 <br>
 <br>
 <br>
 
 ***
-Para más información sobre otros modelos y los problemas que puede tener Git-Flow, puedes ampliar este blog con los siguientes enlaces
+Para más información sobre otros modelos y los problemas que puede tener GitFlow, puedes ampliar este blog con los siguientes enlaces
 - **[Comparando flujos de trabajo, por Atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow)**
 - **[Reconsiderando GitFlow](http://endoflineblog.com/gitflow-considered-harmful)**
 - **[GitHub Flow](https://guides.github.com/introduction/flow/)**
