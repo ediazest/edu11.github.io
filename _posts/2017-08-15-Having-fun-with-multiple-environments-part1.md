@@ -14,11 +14,13 @@ In mobile development, I'd say this is a 'must' because it's possible to deliver
 
 There is a problem about this, however. As you may have noticed, you can't install two apps with the same bundle id/package name in the same device, which means you can only have one of them at the same time, making testing on different environments tedious. For someone who only cares about testing beta version, it may not mean a lot, but it is quite upsetting for us, developers, because we are constantly testing in dev, beta, release...
 
-To top it all, after finishing that *small problem*, you realise that all your installed versions share the same icon and display name. I know you are with me on this, it is quite annoying when you try to launch the release version but end up launching the last store version...
+To top it all, after finishing that *small problem*, you realise that all your installed versions share the same icon and display name. I know you are with me on this, it is quite annoying when you try to launch the beta version but end up launching the last version deployed on the store...
 
-Furthermore, if your app connects to a *CMS* (content management system), probabilities your CMS is deployed in several environments is high. So, just like that, configuration becomes even more difficult. We have to admit it, we all have created a constant in the code that contains a server URL, with some commented lines with the rest of the environments. I have to say it's a good start, it could be even worse if we would have hardcoded in every http request, but still we know is not a good solution. It is highly error prone and, of course, not very elegant...
+Furthermore, if your app connects to a *CMS* (content management system), probabilities your CMS is deployed in several environments is high. So, just like that, configuration becomes even more difficult. 
 
-If what you have read so far looks familiar and every time you have to release a new version, you are scare, you will find this articule really useful. However, if you have already fought this problems and solved them like a ninja, I would love to read your comments about your implementation and see if we could improve by taking the best of our solutions!
+We have to admit it, we all have created a constant in the code that contains a server URL, with some commented lines with the rest of the environments. I have to say it's a good start, it could be even worse if we would have hardcoded in every http request, but still, we know is not a good solution. It is highly error prone and, of course, not very elegant...
+
+If what you have read so far looks familiar and every time you have to release a new version, you are scare, you will find this articule really useful. However, if you have already fought this problem and solved it like a ninja, I would love to read your comments about your implementation and see if we could improve by taking the best of our solutions!
 
 This article is the first of a serie of two (one for platform). Because it has a higher level of complexity, I will start talking about configuring xCode for iOS projects. I will publish an equivalent version for AndroidStudio shortly.
 
@@ -40,7 +42,7 @@ Inside *"Packaging"* section, you will find *"Product Name*". For ease of use, m
 
 #### I want them all!
 
-As I said in the introduction, both developers and testers are interested in having any available version installed in the same device, saving us time and unexpected problems. The next step is key to achieve it, because, even though you have already created a *Beta* configuration and changed the names, every time you install a new version, the OS will overwrite the one you have installed (even if it comes from the AppStore).
+As I said in the introduction, both developers and testers are interested in having any available version installed on the same device, saving us time and unexpected problems. The next step is key to achieve it, because, even though you have already created a *Beta* configuration and changed the names, every time you install a new version, the OS will overwrite the one you have installed (even if it comes from the AppStore).
 
 You need creating a user-define configuration parameter. You can name it as you prefer, but you wil find many references on internet as *BUNDLE_ID_SUFFIX*. Once created, open the new *dropdown* and add the values for every configuration, leaving *"Release*" blank.
 
@@ -52,7 +54,7 @@ Coming next, you will need to edit your *.plist* file (if you haven't change it,
 
 #### Icons, please
 
-From this moment on, you CAN have every single version installed in your device, but they will still show the same icon.
+From this moment on, you CAN have every single version installed on your device, but they will still show the same icon.
 
 To solve it, we will follow the same pattern we have implemented for saving us of writing the exact name for every icon/configuration.
 
@@ -82,25 +84,25 @@ A *Beta version*, by definition, is the version that it's ready to be deployed a
 
 ![Picking Beta build config](../../../assets/images/multiple-env/part1/setting-beta-archive.png "Picking Beta build config")
 
-In case you would like to run this configuration during development, just follow the same steps but selecting *"Debug"* this time.
+In case you would like to run this configuration during development, just follow the same steps but selecting *"Run"* this time.
 
 #### Configuring multiple environments
 
-To complete what I promised at the beginning of this post, we need to see how to change environment related parameters automatically by running one scheme or other.
+To complete what I promised at the beginning of this post, we need to see how to change environment related parameters automatically by running one configuration or other.
 
 There are different options to achieve this, personally, I like the idea of creating a new configuration *plist* file to group all those environment-dependant variables.
 
-No matter how you do it, first step is adding a new key into the row into the *Info.plist* with *"$(CONFIGURATION)"* as value. This way, the configuration used during building time will be accesible through a *Configuration* variable, making very easy the assertion of which configuration is running.
+No matter how you do it, first step is common to any option, and it would be adding a new key into *Info.plist* with *"$(CONFIGURATION)"* as value. This way, the configuration used during building time will be accesible through a *Configuration* variable, making very easy the assertion of which configuration is running.
 
 ![Info.plist configuration](../../../assets/images/multiple-env/part1/configuration-key.png "Adding new config key-value to Info.plist")
 
-If you would like to test it now, you can add the line below inside the *"didFinishLaunchingWithOptions"* method of *AppDelegate*:
+If you would like to test it now, you could add the line below inside the *"didFinishLaunchingWithOptions"* method of *AppDelegate* and see what it prints:
 
 {% highlight swift %}
     print(Bundle.main.object(forInfoDictionaryKey:"Configuration")!)
 {% endhighlight %}
 
-Here is where other solutions may diver. Our next step will be to create a new *plist* file called *"Config"* and fill in with a dictionary containing the environment variables. You may want to use the following example as starting point:
+Here is where other solutions may diver. Our next step will be to create a new *plist* file called *"Config"* and fill it in with a dictionary containing the environment variables. You may want to use the following example as starting point:
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -163,6 +165,6 @@ As an important note, the previous code contains some lines for checking if a fi
 
 #### Conclusion
 
-Reducing the possibilities of making mistakes and get a clear knowledge of how to deploy into your multiple environments is always a good idea. Imagine that instead of having three environments, we have four or even more, and each of them pointing to a different server...What I have explained here will allow you to create multiple schemes and configurations to adapt your app to all of them. Furthermore, by integrating **[Fastlane](https://docs.fastlane.tools)** you will save a lot of suffering and hours!
+Reducing the possibilities of making mistakes and get a clear knowledge of how to deploy into multiple environments is always a good idea. Imagine that instead of having three environments, we have four or even more, and each of them pointing to a different server...What I have explained here will allow you to create multiple schemes and configurations to adapt your app to all of them. Furthermore, by integrating **[Fastlane](https://docs.fastlane.tools)** you will save a lot of suffering and hours!
 
-I really hope this post helps you developing awesome iOS apps. Shortly I will publish an equivalent version for Android Studio.
+I really hope this post helps you developing awesome iOS apps. Shortly, the equivalent version for Android Studio.
