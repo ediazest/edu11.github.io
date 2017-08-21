@@ -35,7 +35,7 @@ Para ello, tendrás que hacer click en tu proyecto, y nuevamente en el proyecto 
 
 Ahora sí, selecciona el *target* de tu proyecto y haz click en la pestaña *"Build Settings"*.
 
-Por facilidad, yo suelo utilizar el buscador que xCode nos proporciona arriba a la derecha, pero si no, dentro de la sección *"Packaging"*, encontrarás un campo *"Product Name*". Expándelo y encontrarás nuestras tres configuraciones. Nómbralas como quieras, yo suelo dejar la versión de desarrollo con el nombre del *target*, ya que normalmente tendrá un icono diferente de la versión a publicar (más bien suelo dejarla sin icono), y simplemente añadir el sufijo *Beta* para que aquellos destinados a probar la aplicación tengan claro cuál es cual.
+Por facilidad, yo suelo utilizar el buscador que xCode nos proporciona arriba a la derecha, pero si no, dentro de la sección *"Packaging"*, encontrarás un campo *"Product Name*". Expándelo y encontrarás nuestras tres configuraciones. Nómbralas como quieras, yo suelo dejar la versión de desarrollo con el nombre del *target*, ya que normalmente tendrá un icono diferente de la versión a publicar (o incluso sin icono), y simplemente añadir el sufijo *Beta* para que aquellos destinados a probar la aplicación tengan claro cuál es cual.
 
 ![Cambiando Product Name](../../../assets/images/multiple-env/part1/changing-product-name.png "Añadiendo sufijo Beta a la configuración")
 
@@ -45,7 +45,7 @@ Como comentaba en la introducción, normalmente tanto desarrolladores como *test
 
 Para conseguir esta independencia, crearemos un parámetro de configuración definido por nosotros mismos. La puedes llamar como quieras, pero encontrarás referencias por internet con el nombre *BUNDLE_ID_SUFFIX*. Una vez creado, abre el nuevo *dropdown* y añade los valores para la cada configuración, dejando *"Release"* en blanco.
 
-![Sufijo para Bundle i ](../../../assets/images/multiple-env/part1/bundle-id-suffix.png "Añadiendo sufijo al Bundle id")
+![Sufijo para Bundle id ](../../../assets/images/multiple-env/part1/bundle-id-suffix.png "Añadiendo sufijo al Bundle id")
 
 Lo siguiente será buscar el fichero *.plist* (normalmente *Info.plist* a no ser que lo hayas renombrado) y localizar la línea *"Bundle Identifier"*. Haz doble click y añade *"${BUNDLE_ID_SUFFIX}"*. De esta manera, automáticamente tendremos los tres identificadores funcionando sin tener que preocuparnos de sustituir ningún texto.
 
@@ -71,7 +71,7 @@ Ahora es tu turno y tendrás que rellenar los huecos con esos iconos que ha gene
 
 #### ¿Y ahora cómo instalo cada versión?
 
-No podemos continuar sin que introduzca el término *"Scheme"*, que lo podríamos traducir como el plan de juego de nuestra aplicación. Aquí se especifica qué configuración queremos que se utiliza cuando ejecutamos la aplicación en modo desarrollo, pruebas, creando el fichero *ipa*, etc.∫∫
+No podemos continuar sin que introduzca el término *"Scheme"*, que lo podríamos traducir como el plan de juego de nuestra aplicación. Aquí se especifica qué configuración queremos que se utiliza cuando ejecutamos la aplicación en modo desarrollo, pruebas, creando el fichero *ipa*, etc.
 
 Para acceder a estos *schemes* deberás ir a *Product > Scheme > Manage Schemes*, o bien hacer click en el selector de targets al lado del botón de *stop*, arriba a la izquierda.
 
@@ -164,6 +164,6 @@ información específica para la configuración actual, pasando a utilizar la de
 
 #### Conclusión
 
-Siempre es una buena idea tratar de reducir errores al comienzo de los proyectos y tener claro cómo desplegar en lso diferentes entornos es clave. Imagina que en lugar de tres entornos como en el ejemplo, tenemos cuatro o más, todos apuntando a diferentes servidores... Lo explicado en este post te permitirá crear múltiples esquemas y configuraciones para adaptarte a todos ellos. Además, si a esto le unes la integración con **[Fastlane](https://docs.fastlane.tools)** ahorrarás múltiples horas de sufrimiento! 
+Siempre es una buena idea tratar de reducir errores al comienzo de los proyectos y tener claro cómo desplegar en los diferentes entornos es clave. Imagina que en lugar de tres entornos como en el ejemplo, tenemos cuatro o más, todos apuntando a diferentes servidores... Lo explicado en este post te permitirá crear múltiples esquemas y configuraciones para adaptarte a todos ellos. Además, si a esto le unes la integración con **[Fastlane](https://docs.fastlane.tools)** ahorrarás múltiples horas de sufrimiento! 
 
 Espero que este post ayude en tu camino a desarrollar fantásticas aplicaciones iOS. Próximamente publicaré una versión equivalente para Android Studio.
